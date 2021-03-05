@@ -39,25 +39,26 @@ if (contact.size() > 0)
 }
 ```
 ### Tip #3
-When you `get()` a string field from Zoho CRM and there's no value in that field, it will return *null*. Whereas in Zoho Creator, it returns an empty string "". When it comes to writing null checks, it is important to know how Zoho returns null values.
+When you `get()` a string field from Zoho CRM and there's no value in that field, it will return *null*. Whereas in Zoho Creator, it returns an empty string "". Zoho Invoice/Books has a rather peculiar way of dealing with null values for custom fields. When there is no value in a custom field, the field name simply does not show up in the custom field map in the record. When it comes to writing null checks, it is important to know how Zoho returns null values for different apps.
 * Zoho CRM: Validate with *null*.
 ```javascript
-if (var != null)
+if (field != null)
 {
 	//Write your subsequent actions here
 }
 ```
 * Zoho Creator: Validate with empty string "".
 ```javascript
-if (var != "")
+if (field != "")
 {
 	//Write your subsequent actions here
 }
 ```
-* This is probably unnecessary but if you're paranoid, and are afraid that Zoho might change how the apps return null values, you can validate with both.
+* Zoho Invoice/Books: Validate with `containKey()`.
 ```javascript
-if (var != null || var != "")
+if (record.get("custom_field_hash").containKey("Custom_Field"))
 {
 	//Write your subsequent actions here
 }
 ```
+*Note: All Zoho Invoice/Books custom fields will be stored in a "custom_field_hash" map in the record info.*

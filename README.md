@@ -39,7 +39,7 @@ if (contact.size() > 0)
 }
 ```
 ### Tip #3
-When you `get()` a string field from Zoho CRM and there's no value in that field, it will return *null*. Whereas in Zoho Creator, it returns an empty string "". It is important to know how Zoho returns null values when it comes to writing null checks. 
+When you `get()` a string field from Zoho CRM and there's no value in that field, it will return *null*. Whereas in Zoho Creator, it returns an empty string "". When it comes to writing null checks, it is important to know how Zoho returns null values.
 * Zoho CRM: Validate with *null*.
 ```javascript
 if (var != null)

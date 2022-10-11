@@ -2,7 +2,7 @@
 Create error-free Deluge scripts with null checks!
 
 ## Core Idea
-Safeguarding your script with sufficient null checks is a discipline that every Zoho developer should cultivate. Imagine the frustration when troubleshooting a long and complex script only to find out that the errors were caused certain null values. Why go through the headache of fixing it when you can avoid it? When scripting, make it a habit to ask yourself this question - will this value ever be null? If it's a yes, that's a place for a null check! Here are 3 tips and best practices to help you kickstart the habit.
+Safeguarding your script with sufficient null checks is a discipline that every Zoho developer should cultivate. Imagine the frustration when troubleshooting a long and complex script only to find out that the errors were caused by certain null values. Why go through the headache of fixing it when you can avoid it? When scripting, make it a habit to ask yourself this question - will this value ever be null? If it's a yes, that's a place for a null check! Here are 3 tips and best practices to help you kickstart the habit.
 
 ### Tip #1
 It's often easy to write `record.get("Lookup_Field").get("id")` when you're trying to get the ID of a lookup field on a record. But if the lookup field on the record is null, your script will fail at `.get("id")`. Here's a simple method of avoiding that:
